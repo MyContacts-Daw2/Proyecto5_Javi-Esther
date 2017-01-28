@@ -1,9 +1,9 @@
 <?php
-session_start();
+// session_start();
 
-if (!isset($_SESSION['username'])) {
-  header('location:login.php');
-}
+// if (!isset($_SESSION['username'])) {
+//   header('location:login.php');
+// }
 
 //include "categoria_select_proc.php";
 //include "productos_select_proc.php";
@@ -30,17 +30,62 @@ include "formulario.php";
   </head>
   <script type="text/javascript">
             
-            function llamadaBbdd(ids,url,id){
+            function llamadaBbdd(){
                 $.ajax({
-                        url: url,
-                        data: JSON.stringify(ids), // the array of grupsNet enclosed as an object
+                        url: 'agenda.php',
+                        data: JSON.stringify(),
+                        dataType: "json",
+                        method: "post",
+                        success: function (data) {
+                            //alert(data[0].nombre);
+                            for(var i in data) {
+                               alert(data[i].nombre);
+                               $("#lista").append( '<li class="list-group-item" style="height: 50px; overflow: hidden;"><dt>'+data[i].nombre+'</dt><div class="row"><div class="col-lg-2">'+data[i].tel1+'</div><div class="col-lg-6">'+data[i].direccion1+'</div><div class="col-lg-4"><div class="col-lg-1"><a onclick="eliminarUsuario('+data[i].id+')"><span class="glyphicon glyphicon-remove"></span></a></div><div class="col-lg-1"><a onclick="llamadaBbdd()"><span class="glyphicon glyphicon-pencil"></span></a></div><div class="col-lg-1"><a onclick="llamadaBbdd()"><span  class="glyphicon glyphicon-screenshot"></span></div></div></div></li>');
+
+                            }
+                            // $(id).bootstrapTable('refresh');
+                            // callback( returned_data );
+                            // return;
+                        },
+                        error: function( xhr, status) {
+                            alert(xhr+" - ERROR - "+status);
+                            return;
+                        }
+                })
+            }
+            function eliminarUsuario(id){
+                $.ajax({
+                        url: 'eliminar.php?&rec_id='+id,
+                        data: JSON.stringify(),
                         dataType: "json",
                         method: "post",
                         success: function (data) {
                             alert(data);
-                            $(id).bootstrapTable('refresh');
-                            callback( returned_data );
+                            $("#lista li").remove();
+                            return llamadaBbdd();
+                        },
+                        error: function( xhr, status) {
+                            alert(xhr+" - ERROR - "+status);
                             return;
+                        }
+                })
+            }
+            function editarUsuario(){
+                $.ajax({
+                        url: 'agenda.php',
+                        data: JSON.stringify(),
+                        dataType: "json",
+                        method: "post",
+                        success: function (data) {
+                            //alert(data[0].nombre);
+                            for(var i in data) {
+                               alert(data[i].nombre);
+                               $("#lista").append( '<li class="list-group-item" style="height: 50px; overflow: hidden;"><dt>'+data[i].nombre+'</dt><div class="row"><div class="col-lg-2">'+data[i].tel1+'</div><div class="col-lg-6">'+data[i].direccion1+'</div><div class="col-lg-4"><div class="col-lg-1"><a onclick="llamadaBbdd()"><span class="glyphicon glyphicon-remove"></span></a></div><div class="col-lg-1"><a onclick="llamadaBbdd()"><span class="glyphicon glyphicon-pencil"></span></a></div><div class="col-lg-1"><a onclick="llamadaBbdd()"><span  class="glyphicon glyphicon-screenshot"></span></div></div></div></li>');
+
+                            }
+                            // $(id).bootstrapTable('refresh');
+                            // callback( returned_data );
+                            // return;
                         },
                         error: function( xhr, status) {
                             alert(xhr+" - ERROR - "+status);
@@ -95,7 +140,29 @@ include "formulario.php";
             <div class="row">
               <div  class="col-lg-12">
                   <ul id="lista" class="list-group">
-                    <li class="list-group-item" style="height: 50px;">
+                    <li class="list-group-item" style="height: 50px; overflow: hidden;">
+                        <dt>ESTA ES LA LINEA BUENA</dt> 
+                      <div class="row">
+                        <div class="col-lg-2">
+                          659659659
+                        </div>
+                        <div class="col-lg-6">
+                          calle hernan cortes, 42 Villa nueva de la Serena
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="col-lg-1">
+                            <a onclick="eliminarUsuario(1)"><span class="glyphicon glyphicon-remove"></span></a>
+                          </div>
+                          <div class="col-lg-1">
+                            <a onclick="llamadaBbdd()"><span class="glyphicon glyphicon-pencil"></span></a>
+                          </div>
+                          <div class="col-lg-1">
+                            <a onclick="llamadaBbdd()"><span  class="glyphicon glyphicon-screenshot"></span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- <li class="list-group-item" style="height: 50px;">
                           <dt>Vestibulum at eros</dt> 
                           <dd><div class="col-lg-2">659659659</div><div class="col-lg-8">Avda Rural 4, Barcelona</div></dd> 
                     </li>
@@ -110,8 +177,8 @@ include "formulario.php";
                     <li class="list-group-item" style="height: 50px;">
                           <dt>Dapibus ac facilisis in</dt> 
                           <dd><div class="col-lg-2">659659659</div><div class="col-lg-8">Avda Rural 4, Barcelona</div></dd> 
-                    </li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    </li> -->
+                    <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
                     <li class="list-group-item">Morbi leo risus</li>
                     <li class="list-group-item">Porta ac consectetur ac</li>
                     <li class="list-group-item">Vestibulum at eros</li>
@@ -132,9 +199,11 @@ include "formulario.php";
                           <dd><div class="col-lg-2">659659659</div><div class="col-lg-8">Avda Rural 4, Barcelona</div></dd> 
                     </li>
                     <li class="list-group-item" style="height: 50px;">
-                          <dt>Dapibus ac facilisis in</dt> 
-                          <dd><div class="col-lg-2">659659659</div><div class="col-lg-8">Avda Rural 4, Barcelona</div></dd> 
-                    </li>
+                        <dt> ESTA ES LA LINEA BUENA </dt> 
+                      <div class="row">
+                        <div class="col-lg-3">659659659</div><div class="col-lg-9">Avda Rural 4, Barcelona</div>
+                      </div>
+                    </li> -->
                   </ul>
               </div>
             </div>
