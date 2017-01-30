@@ -9,40 +9,40 @@
 // INSERT INTO `tbl_perfil` (`per_id`, `per_nombre`, `per_apellido1`, `per_apellido2`, `per_mail`, `per_telf1`, `per_telf2`, `per_direc1`, `per_coord1`, `per_direc2`, `per_coord2`, `per_coment`, `per_foto`, `usu_id`) VALUES (NULL, 'Daniel', 'Vargas', 'Benítez', 'danvabe@hotmail.com', '659083317', '924845041', 'Avinguda de Gaudí 42, Barcelona', 'mis coord', 'Calle Valle del Jerte 4, villanueva de la Serena', 'coord2', 'Vivo contigo.', 'numerodefoto', '25');
 
 	
-if(isset($_REQUEST['insertForm'])){
+// if(isset($_REQUEST['insertForm'])){
 
 
 	extract($_REQUEST);
 
-	echo $per_nombre;
-	echo "\n";
-	echo $per_apellido1;
-	echo "\n";
-	echo $per_apellido2;
-	echo "\n";
-	echo $per_mail;
-	echo "\n";
-	echo $per_telf1;
-	echo "\n";
-	echo $per_telf2;
-	echo "\n";
-	echo $per_direc1;
-	echo "\n";
-	echo $per_cp1;
-	echo "\n";
-	echo $per_coord1;
-	echo "\n";
-	echo $per_cp2;
-	echo "\n";
-	echo $per_direc2;
-	echo "\n";
-	echo $per_coord2;
-	echo "\n";
-	echo $per_coment;
-	echo "\n";
-	echo $usu_id;
-	echo "\n";
-	echo $per_foto;
+	// echo $per_nombre;
+	// echo "\n";
+	// echo $per_apellido1;
+	// echo "\n";
+	// echo $per_apellido2;
+	// echo "\n";
+	// echo $per_mail;
+	// echo "\n";
+	// echo $per_telf1;
+	// echo "\n";
+	// echo $per_telf2;
+	// echo "\n";
+	// echo $per_direc1;
+	// echo "\n";
+	// echo $per_cp1;
+	// echo "\n";
+	// echo $per_coord1;
+	// echo "\n";
+	// echo $per_cp2;
+	// echo "\n";
+	// echo $per_direc2;
+	// echo "\n";
+	// echo $per_coord2;
+	// echo "\n";
+	// echo $per_coment;
+	// echo "\n";
+	// echo $usu_id;
+	// echo "\n";
+	// echo $per_foto;
 
 
 	//---- SQL INSERTAR PERSONA EN LA AGENDA:
@@ -97,6 +97,9 @@ $producto = mysqli_query($conexion, $sql_insert_usuario);
 
 		//$categoria = mysqli_query($conexion, $sql_select_categoria);
 
-}
+// }
+$data="true";
+
+echo $producto;
 
 ?>

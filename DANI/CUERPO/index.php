@@ -29,6 +29,23 @@ include "formulario.php";
  
   </head>
   <script type="text/javascript">
+
+            function insertBd(){
+              var url = "formulario.php"; // El script a dónde se realizará la petición.
+                $.ajax({
+                       type: "POST",
+                       url: url,
+                       data: $("#formulario").serialize(), // Adjuntar los campos del formulario enviado.
+                       success: function(data)
+                       {
+                          alert(data);
+                           //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                       }
+                     });
+
+                return false; // Evitar ejecutar el submit del formulario.
+            }
+
             
             function llamadaBbdd(){
                 $.ajax({
@@ -52,7 +69,7 @@ include "formulario.php";
                             return;
                         }
                 })
-            }
+            };
             function eliminarUsuario(id){
                 $.ajax({
                         url: 'eliminar.php?&rec_id='+id,
@@ -69,7 +86,7 @@ include "formulario.php";
                             return;
                         }
                 })
-            }
+            };
             function editarUsuario(){
                 $.ajax({
                         url: 'agenda.php',
@@ -225,7 +242,7 @@ include "formulario.php";
           <h4 class="modal-title">Insertar Contacto</h4>
         </div>
         <div class="modal-body">
-          <form role="form" action="formulario.php">
+          <form role="form"  id="formulario">
             <div class="row">
               <div class="form-group col-lg-4">
                 <label >Nombre</label>
@@ -302,7 +319,7 @@ include "formulario.php";
             
             <div class="row">
               <div class="form-group col-lg-12">
-                <button type="submit" class="btn btn-primary col-lg-12" value="insertForm">GUARDAR</button>
+                <button type="submit" id="inserUsu" class="btn btn-primary col-lg-12" value="insertForm">GUARDAR</button>
               </div>
             </div>
           </form>
