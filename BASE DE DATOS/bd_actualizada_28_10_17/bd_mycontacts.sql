@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2017 a las 13:03:54
+-- Tiempo de generación: 31-01-2017 a las 18:16:17
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.5.37
 
@@ -36,7 +36,7 @@ CREATE TABLE `tbl_perfil` (
   `per_telf2` int(9) NOT NULL,
   `per_direc1` varchar(50) CHARACTER SET latin1 NOT NULL,
   `per_cp1` int(5) NOT NULL,
-  `per_coord1` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `per_coord1` text COLLATE utf8_unicode_ci NOT NULL,
   `per_direc2` varchar(50) CHARACTER SET latin1 NOT NULL,
   `per_cp2` int(5) NOT NULL,
   `per_coord2` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -50,9 +50,13 @@ CREATE TABLE `tbl_perfil` (
 --
 
 INSERT INTO `tbl_perfil` (`per_id`, `per_nombre`, `per_apellido1`, `per_apellido2`, `per_mail`, `per_telf1`, `per_telf2`, `per_direc1`, `per_cp1`, `per_coord1`, `per_direc2`, `per_cp2`, `per_coord2`, `per_coment`, `per_foto`, `usu_id`) VALUES
-(1, 'Daniel', 'Vargas', 'Benítez', 'danvabe@hotmail.com', 659083317, 924845041, 'Avinguda de Gaudí 42, Barcelona', 0, 'mis coord', 'Calle Valle del Jerte 4, villanueva de la Serena', 0, 'coord2', 'Vivo contigo.', 'numerodefoto', 25),
-(5, 'Daniel', 'Vargas', 'Benítez', 'danvabe@hotmail.com', 659083317, 924845041, 'Avinguda de gaudí 42, Barcelona', 8025, '', 'Valle del Jerte 4, Barcelona', 8025, '', 'Vivo contigo', '', 0),
-(6, 'Daniel', 'Vargas', 'Benítez', 'danvabe@hotmail.com', 659083317, 924845041, 'Avinguda de gaudí 42, Barcelona', 8025, '', 'Valle del Jerte 4, Barcelona', 8025, '', 'Vivo contigo', '', 0);
+(1, 'Daniel', 'Vargas', 'Benítez', 'danvabe@hotmail.com', 659083317, 924845041, 'asdf', 0, 'mis coord', 'Calle Valle del Jerte 4, villanueva de la Serena', 0, 'coord2', 'Vivo contigo.', 'numerodefoto', 25),
+(6, 'Antonio', 'Vargas', 'Benítez', 'danvabe@hotmail.com', 659083317, 924845041, 'Avinguda de gaudí 42, Barcelona, Spain', 8025, '', 'Valle del Jerte 4, Barcelona', 8025, '', 'Vivo contigo', '', 0),
+(19, 'Daniel', 'Vargas', 'Benítez', 'danvabe@hotmail.com', 659083317, 924845041, 'Plaza de Cataluña, Barcelona, Spain', 6700, '', 'Valle del Jerte 4, Barcelona', 6700, '', 'Vivo contigo', '', 0),
+(20, 'Esther', 'Vargas', 'Benítez', 'danvabe@hotmail.com', 659083317, 924845041, 'b', 6700, '41.40056986029896,2.160615921020508', 'Valle del Jerte 4, Barcelona', 6700, '', 'Vivo contigo', '', 0),
+(29, 'Javi', '', '', '', 66, 0, '', 0, '', '', 0, '', '', '', 0),
+(30, 'Javi', '', '', '', 66, 0, '', 0, '', '', 0, '', '', '', 0),
+(56, 'Borrar42', '', '', '', 1, 0, '', 0, '', '', 0, '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -102,7 +106,7 @@ ALTER TABLE `tbl_usuario`
 -- AUTO_INCREMENT de la tabla `tbl_perfil`
 --
 ALTER TABLE `tbl_perfil`
-  MODIFY `per_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `per_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
