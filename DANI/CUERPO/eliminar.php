@@ -5,7 +5,7 @@ extract($_REQUEST);
 
 	//---- SQL INSERTAR PERSONA EN LA AGENDA:
 
-$sql_delete_agenda ="DELETE FROM tbl_perfil WHERE per_id = '".$rec_id."'";
+$sql_delete_agenda ="DELETE FROM tbl_perfil WHERE per_id = '".$per_id."'";
 
 
 

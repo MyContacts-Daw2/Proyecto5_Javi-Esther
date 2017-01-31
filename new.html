@@ -119,6 +119,20 @@ function codeAddress2 (address) {
         });
       }
 
+function codeAddress3 () {
+          
+          geocoder.geocode( { 'address': 'Plaza de Cataluña, Barcelona, Spain'}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+             updateMarkerPosition(results[0].geometry.location);
+             marker.setPosition(results[0].geometry.location);
+             map.setCenter(results[0].geometry.location);
+             document.form_mapa.direccion.value = address;
+           } else {
+            alert('ERROR : ' + status);
+          }
+        });
+      }
+
 function updateMarkerStatus(str) {
   document.form_mapa.direccion.value = str;
 }
@@ -148,7 +162,7 @@ function updateMarker(location) {
 
 </script>
 </head>
-<body   onload=" codeAddress2('segovia,spain')"  >
+<body   onload=" "  >
   <style>
   #mapCanvas {
     width: 1000px;
@@ -191,6 +205,8 @@ function updateMarker(location) {
 </div> 
  
 <div id="mapCanvas"></div>
+
+<a href="#" onclick="codeAddress2('Avinguda de Gaudí 42, Barcelona, Spain')">Click</a>
 
 </body>
 </html>

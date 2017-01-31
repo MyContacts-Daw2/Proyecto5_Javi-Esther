@@ -47,12 +47,40 @@
 
 	//---- SQL INSERTAR PERSONA EN LA AGENDA:
 
-$sql_insert_usuario ="INSERT INTO tbl_perfil (per_nombre, per_apellido1, per_apellido2, per_mail, per_telf1, per_telf2, per_direc1, per_cp1, per_coord1, per_direc2, per_cp2, per_coord2, per_coment, per_foto, usu_id) VALUES ('".$per_nombre."', '".$per_apellido1."', '".$per_apellido2."', '".$per_mail."', '".$per_telf1."', '".$per_telf2."', '".$per_direc1."', '".$per_cp1."', '".$per_coord1."', '".$per_direc2."', '".$per_cp1."', '".$per_coord2."', '".$per_coment."', '".$per_foto."', '".$usu_id."')";
+// $sql_editar_usuario ="SELECT * FROM tbl_perfil WHERE per_id='".$per_id."'";
+$sql_editar_usuario ="SELECT * FROM tbl_perfil WHERE per_id='19'";
 
 	//print_r($sql_insert_usuario);
 
 
-$producto = mysqli_query($conexion, $sql_insert_usuario);
+$producto = mysqli_query($conexion, $sql_editar_usuario);
+
+// print_r(row=mysqli_fetch_array($producto));
+while($row = mysqli_fetch_array($producto)){
+	$id=$row['per_id'];
+    $nombre=$row['per_nombre'];
+    $apellido1=$row['per_apellido1']." ".$row['per_apellido2'];
+    $apellido2=$row['per_apellido2'];
+    $email=$row['per_email'];
+    $tel1=$row['per_telf1'];
+    $tel2=$row['per_telf2'];
+    $direccion1=$row['per_direc1'];
+    $cp1=$row['per_cp1'];
+    $coord1=$row['per_coord1'];
+    $direccion2=$row['per_direc2'];
+    $cp2=$row['per_cp2'];
+    $coord2=$row['per_coord2'];
+    $comentario=$row['per_coment'];
+    $foto=$row['per_foto'];
+
+    $clientes[] = array('id'=> $id, 'nombre'=> $nombre, 'apellidos'=> $apellidos, 'email'=> $email,
+                         'tel1'=> $tel1, 'tel2'=> $tel2, 'direccion1'=> $direccion1, 'cp1'=> $cp1, 'coord1'=> $coord1, 'direccion2'=> $direccion2, 'cp2'=> $cp2, 'coord2'=> $coord2, 'foto'=> $foto, 'comentario'=> $comentario);
+
+
+} 
+
+echo json_encode($clientes);
+
 
 
 	
@@ -98,8 +126,8 @@ $producto = mysqli_query($conexion, $sql_insert_usuario);
 		//$categoria = mysqli_query($conexion, $sql_select_categoria);
 
 // }
-$data="Usuario añadido correctamente";
+//$data="Usuario añadido correctamente";
 
-echo $producto;
+//echo $producto;
 
 ?>
