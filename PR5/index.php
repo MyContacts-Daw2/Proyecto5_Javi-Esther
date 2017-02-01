@@ -352,30 +352,7 @@ function updateMarker(location) {
 
             }
             
-          //     if (textoBusqueda != "") {
-          //         $.ajax({
-          //               url: 'editarUsuario.php?&per_id='+id,
-          //               data: JSON.stringify(),
-          //               dataType: "json",
-          //               method: "post",
-          //               success: function (data) {
-
-
-          //         // $.post("buscar.php",{data: JSON.stringify()},{dataType: "json"}, {valorBusqueda: textoBusqueda}, function(mensaje) {
-
-          //             //$("#resultadoBusqueda").html(mensaje);
-          //             $("#lista li").remove();
-
-          //             for(var i in data) {
-          //                       // alert(data[i].id);
-          //                      $("#lista").append( '<li class="list-group-item" style="height: 50px; overflow: hidden;"><dt>'+mensaje[i].nombre+' '+mensaje[i].apellidos+'</dt><div class="row"><div class="col-lg-2">'+mensaje[i].tel1+'</div><div class="col-lg-6">'+mensaje[i].direccion1+'</div><div class="col-lg-4"><div class="col-lg-1"><a onclick="eliminarUsuario('+mensaje[i].id+')"><span class="glyphicon glyphicon-remove"></span></a></div><div class="col-lg-1"><a data-toggle="modal" data-target="#myModal" onclick="editarUsuario('+mensaje[i].id+')"><span class="glyphicon glyphicon-pencil"></span></a></div><div class="col-lg-1"><a onclick="codeAddress2(\''+mensaje[i].direccion1+'\')"><span  class="glyphicon glyphicon-screenshot"></span></div></div></div></li>');
-
-          //                   }
-
-          //                 }
-          //         }); 
-              
-          // };
+          
         }
       </script>
 
@@ -428,7 +405,7 @@ function updateMarker(location) {
               <div class="row">
                 <div class="col-lg-10">
                 <form>
-                  <input type="text" class="form-control" name="busqueda" id="busqueda" value="" maxlength="30" autocomplete="off" onKeyUp="buscar();" placeholder="Buscador">
+                  <input type="text" class="form-control" name="busqueda" id="busqueda" value="" maxlength="30" autocomplete="off" onKeyUp="buscar()" placeholder="Buscador">
                 </form>
                 </div>
                 <div class="col-lg-2">

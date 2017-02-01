@@ -19,7 +19,7 @@ if (isset($consultaBusqueda)) {
 
 // -- "
 // SELECT * FROM tbl_perfil WHERE (per_nombre LIKE '%D%'OR per_apellido1 LIKE '%D%'OR per_apellido2 LIKE '%D%' OR CONCAT(per_nombre,' ',per_apellido1,' ',per_apellido2) LIKE '%D%') AND usu_id=1 
-$sql_select_agenda ="SELECT * FROM tbl_perfil WHERE (per_nombre LIKE '%".$consultaBusqueda."%'OR per_apellido1 LIKE '%".$consultaBusqueda."%' OR per_apellido2 LIKE '%".$consultaBusqueda."%' OR CONCAT(per_nombre,' ',per_apellido1,' ',per_apellido2) LIKE '%".$consultaBusqueda."%') AND usu_id=".$_SESSION['usu_id']."";
+$sql_select_agenda ="SELECT * FROM tbl_perfil WHERE (per_nombre LIKE '%".$consultaBusqueda."%'OR per_apellido1 LIKE '%".$consultaBusqueda."%' OR per_apellido2 LIKE '%".$consultaBusqueda."%' OR per_telf1 LIKE '%".$consultaBusqueda."%' OR CONCAT(per_nombre,' ',per_apellido1,' ',per_apellido2) LIKE '%".$consultaBusqueda."%') AND usu_id=".$_SESSION['usu_id']."";
 
 
 //$sql_select_agenda ="SELECT * FROM tbl_perfil WHERE usu_id=".$_SESSION['usu_id']."";
