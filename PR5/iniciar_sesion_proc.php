@@ -4,7 +4,7 @@
 	include "includes/conexion_bd.php";
 
 	extract($_REQUEST);
-
+		$_SESSION['error']="";
 		
 		if (isset($enviar_login)) {
 			$sql_select_usuario ="SELECT * FROM tbl_usuario WHERE usu_usuario ='".$user."' and usu_password ='".$password."'";
@@ -32,7 +32,7 @@
 
 				
 			}else{
-				$result="error";
+				$_SESSION['error']="Usuario o password incorrecto";
 			}
 	}
 

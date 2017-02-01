@@ -390,14 +390,41 @@ function updateMarker(location) {
                     echo $_SESSION['usu_nombre'];  echo " "; echo $_SESSION['usu_apellido1']; echo " "; echo $_SESSION['usu_apellido2'] ?>
                     <br>
                     <?php echo $_SESSION['usu_direc1']?> </h3>
-                      <a href="#" class="btn btn-primary" role="button">Botón</a>
-                      <a href="#" class="btn btn-default" role="button">Botón</a>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#mapaTodos" role="button">Ver todos mis contactos en el mapa</a>
                     </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
+<!-- INICIO VENTANA MODAL #mapaTodos-->
+                    <div class="modal fade" id="mapaTodos" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <img src="img/Logo_letrasSM.jpg" class="image-responsive">
+                          <div class="col-md-10"> 
+                            <h1 class="text-center">MyContacts <small>siempre a punto <img src="img/punteroNaranja2.jpg"><img src="img/punteroAzul.jpg"></small></h1>
+                          </div>
+                    </div>
+                      <div class="modal-body">
+                          <div class="caja">
+                            <iframe class="col-lg-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.1179376121263!2d2.1055016151933397!3d41.3497902062884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498d64bd023fd%3A0x26089fc39cb352a3!2sJesu%C3%AFtes+Bellvitge.+Centre+d&#39;Estudis+Joan+XXIII!5e0!3m2!1ses!2ses!4v1485446539541" height="450" frameborder="0" style="border:4" allowfullscreen></iframe>
+                          </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+              <!-- FIN VENTANA MODAL #readMORE -->
+
+
+
+
+
+
         <div class="col-lg-4">
           <div class="caja1">
             <div class="form-group">

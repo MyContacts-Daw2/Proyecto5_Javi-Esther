@@ -68,6 +68,12 @@ if (isset($_SESSION['usu_usuario'])) {
 	
 	</head>
 	<body>
+		<?php
+			if(!empty($_SESSION['error'])){
+				echo '<script languaje="JavaScript">alert("Verifica el Usuario o la Contraseña");</script>';
+			}
+
+		 ?>
 		<div class="contenedor">
 		<!-- INICIO HEADER DE LA PAGINA -->
 			<div class="page-header col-md-12" style="background-color: white">
@@ -105,8 +111,27 @@ if (isset($_SESSION['usu_usuario'])) {
 		                                  <label>
 		                                      <input type="checkbox" name="remember" id="remember"> Recuérdame
 		                                  </label>
-		                                  <p class="help-block">(La opción RECUÉRDAME es sólo una beta, esperemos que esté operativo en breve)</p>
+		                                  <a class="help-block" href="" data-toggle="modal" data-target="#notaProfe">(La opción RECUÉRDAME es sólo una beta, esperemos que esté operativo en breve)</a>
 		                              </div>
+		                              <!-- INICIO VENTANA MODAL #notaProfe-->
+		                <div class="modal fade" id="notaProfe" role="dialog">
+	   						<div class="modal-dialog modal-lg">
+	      						<div class="modal-content">
+	        						<div class="modal-header">
+								          <button type="button" class="close" data-dismiss="modal">&times;</button>
+								          <img src="img/Logo_letrasSM.jpg" class="image-responsive">
+								          <div class="col-md-10"> 
+						          			<h1 class="text-center">Nota para los profesores: <small>Sabemos que para desarrollar esta opción tenemos que utilizar las cookies, así que de momento no hemos podido implementarlo</small></h1>
+						        		  </div>
+								    </div>
+	      						</div>
+	       					</div>
+	  					</div>
+	  					<!-- FIN VENTANA MODAL #notaProfe -->
+
+
+
+
 		                              <input type="submit" id="submit" name="enviar_login" value="Enviar" class="btn btn-info btn-block">
 	                          	</form>
 		                    </div>
@@ -119,7 +144,7 @@ if (isset($_SESSION['usu_usuario'])) {
 		                        <li><span class="fa fa-check text-success"></span> Localiza a tus contactos en el mapa</li>
 		                        <li><span class="fa fa-check text-success"></span> Modifica tus contactos</li>
 		                        <li><span class="fa fa-check text-success"></span> Establece rutas desde tu situación hasta la dirección de tus contactos</li>
-		                        <li><a href="" data-toggle="modal" data-target="#readMore"><u>Read more</u></a></li>
+		                        <li><a href="" data-toggle="modal" data-target="#readMore"><u>Seguir leyendo</u></a></li>
 		                    </ul>
 
 		                <!-- INICIO VENTANA MODAL #readMORE-->
