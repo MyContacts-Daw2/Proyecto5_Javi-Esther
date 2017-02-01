@@ -390,8 +390,9 @@ function updateMarker(location) {
                     echo $_SESSION['usu_nombre'];  echo " "; echo $_SESSION['usu_apellido1']; echo " "; echo $_SESSION['usu_apellido2'] ?>
                     <br>
                     <?php echo $_SESSION['usu_direc1']?> </h3>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#mapaTodos" role="button">Ver todos mis contactos en el mapa</a>
-                    </p>
+                      <div class="text-center" style="overflow: hidden;">
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#mapaTodos" role="button">Mis contactos en el mapa</a>
+                      </div>
                 </div>
               </div>
             </div>
