@@ -9,6 +9,7 @@ body{
   font-family: Calibri;
   background-color: lightgrey;
   background:#f4f4f4 url(../img/bg.gif) repeat top left;
+  overflow-x:hidden;
   /*padding-left: 10px;
   padding-right: 10px;*/
 }
